@@ -17,7 +17,7 @@ const SpecialOffer = () => {
   // Fetch menu items
   useEffect(() => {
     axios
-      .get('http://localhost:4000/api/items')
+      .get('https://bitebuzz-backend-ue5i.onrender.com/api/items')
       .then(res => setItems(res.data.items ?? res.data))
       .catch(err => console.error(err));
   }, []);
@@ -197,7 +197,7 @@ export default SpecialOffer;
 //   /* ---------------- FETCH + MERGE ITEMS ---------------- */
 //   useEffect(() => {
 //     axios
-//       .get('http://localhost:4000/api/items')
+//       .get('https://bitebuzz-backend-ue5i.onrender.com/api/items')
 //       .then(res => {
 //         const apiItems = res.data.items ?? res.data ?? [];
 
