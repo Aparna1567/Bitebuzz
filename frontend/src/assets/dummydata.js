@@ -4,12 +4,12 @@ import { FaFacebook, FaInstagram, FaXTwitter, FaYoutube } from 'react-icons/fa6'
 import { FiUser, FiSmartphone, FiMail, FiHome } from 'react-icons/fi';
 import { FaUtensils } from 'react-icons/fa';
 import { GiChefToque, GiFoodTruck } from 'react-icons/gi';
-import IA1 from './IA1.png';
-import IA2 from './IA2.png';
-import IA3 from './IA3.png';
-import IA4 from './IA4.png';
-import IA5 from './IA5.png';
-import IA6 from './IA6.png';
+import IA1 from './IA1.webp';
+import IA2 from './IA2.webp';
+import IA3 from './IA3.webp';
+import IA4 from './IA4.webp';
+import IA5 from './IA5.webp';
+import IA6 from './IA6.webp';
 
 import Kebab from "./Kebab.png";
 import ChickenTikka from "./ChickenTikka.png";
@@ -21,10 +21,10 @@ import PaneerTikka from "./PannerTikka.png";
 import PalakPaneer from "./PalakPaneer.png";
 
 import BannerImage from "./BannerImage.webp";
-import Image1 from "./Image1.png";
-import Image2 from "./Image2.png";
-import Image3 from "./Image3.png";
-import Image4 from "./Image4.png";
+import Image1 from "./Image1.webp";
+import Image2 from "./Image2.webp";
+import Image3 from "./Image3.webp";
+import Image4 from "./Image4.webp";
 import Video from "./Video.mp4";
 
 // ABOUT PAGE
