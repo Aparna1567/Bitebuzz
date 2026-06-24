@@ -13,14 +13,14 @@ import IA6 from './IA6.png';
 
 import Kebab from "./Kebab.png";
 import ChickenTikka from "./ChickenTikka.png";
-import ChickenChargha from "./ChickenChargha.png";
-import DesiChowmein from "./DesiChowmein.png";
-import GulabJamun from "./GulabJamun.png";
-import MasalaDosa from "./MasalaDosa.png";
+import ChickenChargha from "./ChickenChargha.webp";
+import DesiChowmein from "./DesiChowmein.webp";
+import GulabJamun from "./GulabJamun.webp";
+import MasalaDosa from "./MasalaDosa.webp";
 import PaneerTikka from "./PannerTikka.png";
 import PalakPaneer from "./PalakPaneer.png";
 
-import BannerImage from "./BannerImage.png";
+import BannerImage from "./BannerImage.webp";
 import Image1 from "./Image1.png";
 import Image2 from "./Image2.png";
 import Image3 from "./Image3.png";

@@ -1,7 +1,7 @@
 import React from 'react';
 import {FaInfoCircle } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-import AboutImage from "../../assets/AboutImage.png";
+import AboutImage from "../../assets/AboutImage.webp";
 import './AboutHome.css';
 import FloatingParticle from '../FloatingParticle/FloatingParticle';
 import { aboutfeature } from '../../assets/dummydata';
