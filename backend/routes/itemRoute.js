@@ -6,7 +6,7 @@ const itemRouter = express.Router();
 
 const storage = multer.diskStorage({
     destination: (_req, _file, cb) => cb(null, 'uploads/'),
-    filename: (_req, file, cb) => cb(null, `${Date.now()}-${file.originalname}`),
+    filename: (_req, file, cb) =>  cb(null, file.originalname),
 });
 const upload = multer({ storage });
 
@@ -15,3 +15,5 @@ itemRouter.get('/', getItems);
 itemRouter.delete('/:id', deleteItem);
 
 export default itemRouter;
+
+// filename: (_req, file, cb) => cb(null, `${Date.now()}-${file.originalname}`),
