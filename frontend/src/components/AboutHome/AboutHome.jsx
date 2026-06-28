@@ -26,7 +26,7 @@ const AboutHome = () => (
             </span>
           </h2>
           <p className="text-base sm:text-lg md:text-xl opacity-90 leading-relaxed max-w-3xl font-serif italic border-l-4 border-amber-500/60 pl-4 sm:pl-6 py-2 bg-gradient-to-r from-white/5 to-transparent">
-            "In our kitchen, passion meets precision. We craft not just meals, but culinary journeys that linger on the palate and in the heart."
+            "In our kitchen, passion meets precision. We craft not just meals, but culinary journeys that linger on palate and in the heart."
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-8 px-4 sm:px-0">
