@@ -1,10 +1,15 @@
+// import mongoose from "mongoose";
+
+// export const connectDB = async () => {
+//     await mongoose.connect('mongodb+srv://Devivignesh795_db_user:CiD25cYJpWdqNb9K@cluster0.uewkwyr.mongodb.net/FoodieFrenzy')
+//         .then(() => console.log('DB CONNECTED'));
+// }
 import mongoose from "mongoose";
 
 export const connectDB = async () => {
-    await mongoose.connect('mongodb+srv://kayalezhil795_db_user:CiD25cYJpWdqNb9K@cluster0.uewkwyr.mongodb.net/FoodieFrenzy')
-        .then(() => console.log('DB CONNECTED'));
-}
-
+    await mongoose.connect(process.env.MONGODB_URI)
+        .then(() => console.log("DB CONNECTED"));
+};
 // STEPS TO GET YOUR MONGODB ATLAS USERNAME & PASSWORD:
 //
 // 1. SIGN UP / LOG IN TO MONGODB ATLAS

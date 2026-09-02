@@ -21,7 +21,11 @@ const __dirname = path.dirname(__filename);
 app.use(
     cors({
         origin: (origin, callback) => {
-            const allowedOrigins = ['https://bitebuzz-frontend-42rk.onrender.com', 'https://bitebuzz-admin-7o4e.onrender.com'];
+           const allowedOrigins = [
+    'https://bitebuzz-frontend-42rk.onrender.com',
+    'https://bitebuzz-admin-7o4e.onrender.com',
+    'http://localhost:5173'
+];
             if (!origin || allowedOrigins.includes(origin)) {
                 callback(null, true);
             } else {
@@ -49,11 +53,11 @@ app.get('/', (req, res) => {
     res.send('API WORKING');
 })
 
-app.listen(port, () => {
-    console.log(`Server Started on http://localhost:${port}`)
-})
+if (process.env.NODE_ENV !== 'production') {
+    app.listen(port, () => {
+        console.log(`Server Started on http://localhost:${port}`);
+    });
+}
 
+export default app;
 
-
-// kayalezhil795_db_user
-// CiD25cYJpWdqNb9K

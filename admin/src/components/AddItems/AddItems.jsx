@@ -54,7 +54,7 @@ const AddItems = () => {
         payload.append(key, val);
       });
       const res = await axios.post(
-        'https://bitebuzz-backend-ue5i.onrender.com/api/items',
+        'http://localhost:4000/api/items',
         payload,
         { headers: { 'Content-Type': 'multipart/form-data' } }
       );
