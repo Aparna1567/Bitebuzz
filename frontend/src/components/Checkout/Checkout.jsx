@@ -3,7 +3,7 @@ import { useCart } from '../../CartContext/CartContext';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { FaArrowLeft, FaLock } from 'react-icons/fa';
 import axios from 'axios';
-
+const API_URL = import.meta.env.VITE_API_URL;
 const CheckoutPage = () => {
   const { totalAmount, cartItems: rawCart, clearCart } = useCart();
   const cartItems = rawCart.filter(ci => ci.item);
@@ -32,7 +32,7 @@ const CheckoutPage = () => {
       if (paymentStatus === 'success' && sessionId) {
         // Confirm the payment and create order on the backend
         axios.post(
-          'https://bitebuzz-backend-ue5i.onrender.com/api/orders/confirm',
+          `${API_URL}/api/orders/confirm`,
           { sessionId },
           { headers: authHeaders }
         )
@@ -85,7 +85,7 @@ const CheckoutPage = () => {
       if (formData.paymentMethod === 'online') {
         // Initiate payment session; do NOT create order or clear cart yet
         const { data } = await axios.post(
-          'https://bitebuzz-backend-ue5i.onrender.com/api/orders',
+          `${API_URL}/api/orders`,
           payload,
           { headers: authHeaders }
         );
@@ -94,7 +94,7 @@ const CheckoutPage = () => {
       } else {
         // Cash on Delivery: directly create order
         const { data } = await axios.post(
-          'https://bitebuzz-backend-ue5i.onrender.com/api/orders',
+          `${API_URL}/api/orders`,
           payload,
           { headers: authHeaders }
         );

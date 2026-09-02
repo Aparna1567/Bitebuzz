@@ -58,7 +58,7 @@ export const CartProvider = ({ children }) => {
   useEffect(() => {
     const token = localStorage.getItem('authToken');
     axios
-      .get('https://bitebuzz-backend-ue5i.onrender.com/api/cart', {
+      .get(`${import.meta.env.VITE_API_URL}/api/cart`, {
         withCredentials: true,
         headers: { Authorization: `Bearer ${token}` },
       })
@@ -69,7 +69,7 @@ export const CartProvider = ({ children }) => {
   const addToCart = useCallback(async (item, qty) => {
     const token = localStorage.getItem('authToken');
     const res = await axios.post(
-      'https://bitebuzz-backend-ue5i.onrender.com/api/cart',
+      `${import.meta.env.VITE_API_URL}/api/cart`,
       { itemId: item._id, quantity: qty },
       { withCredentials: true, headers: { Authorization: `Bearer ${token}` } }
     );
@@ -79,7 +79,7 @@ export const CartProvider = ({ children }) => {
   const updateQuantity = useCallback(async (_id, qty) => {
     const token = localStorage.getItem('authToken');
     const res = await axios.put(
-      `https://bitebuzz-backend-ue5i.onrender.com/api/cart/${_id}`,
+      `${import.meta.env.VITE_API_URL}/api/cart/${_id}`
       { quantity: qty },
       { withCredentials: true, headers: { Authorization: `Bearer ${token}` } }
     );
@@ -90,7 +90,7 @@ export const CartProvider = ({ children }) => {
   const removeFromCart = useCallback(async _id => {
     const token = localStorage.getItem('authToken');
     await axios.delete(
-      `https://bitebuzz-backend-ue5i.onrender.com/api/cart/${_id}`,
+      `${import.meta.env.VITE_API_URL}/api/cart/${_id}`,
       { withCredentials: true, headers: { Authorization: `Bearer ${token}` } }
     );
     dispatch({ type: 'REMOVE_ITEM', payload: _id });
@@ -99,7 +99,7 @@ export const CartProvider = ({ children }) => {
   const clearCart = useCallback(async () => {
     const token = localStorage.getItem('authToken');
     await axios.post(
-      'https://bitebuzz-backend-ue5i.onrender.com/api/cart/clear',
+      `${import.meta.env.VITE_API_URL}/api/cart/clear`,
       {},
       { withCredentials: true, headers: { Authorization: `Bearer ${token}` } }
     );

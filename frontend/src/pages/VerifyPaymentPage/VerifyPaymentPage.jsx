@@ -30,7 +30,7 @@ const VerifyPaymentPage = () => {
         }
 
         // Stripe says success=true & we have a session_id:
-        axios.get('https://bitebuzz-backend-ue5i.onrender.com/api/orders/confirm', {
+        axios.get(`${import.meta.env.VITE_API_URL}/api/orders/confirm`, {
             params: { session_id },
             headers: authHeaders
         })

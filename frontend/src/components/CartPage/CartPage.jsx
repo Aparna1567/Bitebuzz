@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { FaMinus, FaPlus, FaTrash, FaTimes } from 'react-icons/fa';
 
 // Base URL for serving uploaded images
-const API_URL = 'https://bitebuzz-backend-ue5i.onrender.com';
+const API_URL = import.meta.env.VITE_API_URL;
 
 const CartPage = () => {
   const { cartItems, removeFromCart, updateQuantity, totalAmount } = useCart();

@@ -15,7 +15,7 @@ const OurMenuHome = () => {
   const cartItems = rawCart.filter(ci => ci.item);
 
   useEffect(() => {
-    axios.get('https://bitebuzz-backend-ue5i.onrender.com/api/items')
+    axios.get(`${import.meta.env.VITE_API_URL}/api/items`)
       .then(res => {
         const grouped = res.data.reduce((acc, item) => {
           acc[item.category] = acc[item.category] || [];
