@@ -24,6 +24,7 @@ app.use(
            const allowedOrigins = [
     'https://bitebuzz-frontend-42rk.onrender.com',
     'https://bitebuzz-admin-7o4e.onrender.com',
+    'https://bitebuzz-admin.vercel.app',
     'http://localhost:5173'
 ];
             if (!origin || allowedOrigins.includes(origin)) {
