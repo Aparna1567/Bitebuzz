@@ -79,7 +79,7 @@ export const CartProvider = ({ children }) => {
   const updateQuantity = useCallback(async (_id, qty) => {
     const token = localStorage.getItem('authToken');
     const res = await axios.put(
-      `${import.meta.env.VITE_API_URL}/api/cart/${_id}`
+      `${import.meta.env.VITE_API_URL}/api/cart/${_id}`,
       { quantity: qty },
       { withCredentials: true, headers: { Authorization: `Bearer ${token}` } }
     );
