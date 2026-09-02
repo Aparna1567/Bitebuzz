@@ -54,10 +54,10 @@ const AddItems = () => {
         payload.append(key, val);
       });
       const res = await axios.post(
-        'http://localhost:4000/api/items',
-        payload,
-        { headers: { 'Content-Type': 'multipart/form-data' } }
-      );
+  `${import.meta.env.VITE_API_URL}/api/items`,
+  payload,
+  { headers: { 'Content-Type': 'multipart/form-data' } }
+);
       console.log('Created Item:', res.data);
       setFormData({
         name: '', description: '', category: '',

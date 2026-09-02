@@ -13,7 +13,7 @@ const Orders = () => {
     const fetchOrders = async () => {
       try {
         const response = await axios.get(
-          'http://localhost:4000/api/orders/getall',
+          `${import.meta.env.VITE_API_URL}/api/orders/getall`,
           {
             headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
           }
@@ -44,7 +44,10 @@ const Orders = () => {
 
   const handleStatusChange = async (orderId, newStatus) => {
     try {
-      await axios.put(`http://localhost:4000/api/orders/getall/${orderId}`, { status: newStatus });
+      await axios.put(
+  `${import.meta.env.VITE_API_URL}/api/orders/getall/${orderId}`,
+  { status: newStatus }
+);
       setOrders(orders.map(o => o._id === orderId ? { ...o, status: newStatus } : o));
     } catch (err) {
       alert(err.response?.data?.message || 'Failed to update order status');
