@@ -4,7 +4,7 @@ import { FaStar, FaHeart, FaPlus, FaFire } from 'react-icons/fa';
 import { HiMinus, HiPlus } from 'react-icons/hi';
 import { useCart } from '../../CartContext/CartContext';
 import FloatingParticle from '../FloatingParticle/FloatingParticle';
-
+ const API_URL = import.meta.env.VITE_API_URL;
 const SpecialOffer = () => {
   const [showAll, setShowAll] = useState(false);
   const [items, setItems] = useState([]);
@@ -17,7 +17,7 @@ const SpecialOffer = () => {
   // Fetch menu items
   useEffect(() => {
     axios
-      .get(`${import.meta.env.VITE_API_URL}/api/items`)
+     axios.get(`${API_URL}/api/items`)
       .then(res => setItems(res.data.items ?? res.data))
       .catch(err => console.error(err));
   }, []);

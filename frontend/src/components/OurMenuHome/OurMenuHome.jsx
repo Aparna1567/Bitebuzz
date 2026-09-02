@@ -6,7 +6,7 @@ import { FaMinus, FaPlus } from 'react-icons/fa';
 import './Omh.css';
 
 const categories = ['Breakfast', 'Lunch', 'Dinner', 'Mexican', 'Italian', 'Desserts', 'Drinks'];
-
+const API_URL = import.meta.env.VITE_API_URL;
 const OurMenuHome = () => {
   const [activeCategory, setActiveCategory] = useState(categories[0]);
   const [menuData, setMenuData] = useState({});
@@ -15,9 +15,10 @@ const OurMenuHome = () => {
   const cartItems = rawCart.filter(ci => ci.item);
 
   useEffect(() => {
-    axios.get(`${import.meta.env.VITE_API_URL}/api/items`)
+    axios.get(`${API_URL}/api/items`)
       .then(res => {
-        const grouped = res.data.reduce((acc, item) => {
+        const items = res.data.items ?? res.data;
+        const grouped = items.reduce((acc, item) => {
           acc[item.category] = acc[item.category] || [];
           acc[item.category].push(item);
           return acc;

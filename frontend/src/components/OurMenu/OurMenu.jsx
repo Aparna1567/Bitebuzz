@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useCart } from '../../CartContext/CartContext';
 import { FaMinus, FaPlus } from 'react-icons/fa';
 import './Om.css';
-
+const API_URL = import.meta.env.VITE_API_URL;
 const categories = ['Breakfast', 'Lunch', 'Dinner', 'Mexican', 'Italian', 'Desserts', 'Drinks'];
 
 const OurMenu = () => {
@@ -14,22 +14,27 @@ const OurMenu = () => {
   const cartItems = rawCart.filter(ci => ci.item);
 
   useEffect(() => {
-    const fetchMenu = async () => {
-      try {
-        const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/items`);
-        const byCategory = res.data.reduce((acc, item) => {
-          const cat = item.category || 'Uncategorized';
-          acc[cat] = acc[cat] || [];
-          acc[cat].push(item);
-          return acc;
-        }, {});
-        setMenuData(byCategory);
-      } catch (err) {
-        console.error('Failed to load menu items:', err);
-      }
-    };
-    fetchMenu();
-  }, []);
+  const fetchMenu = async () => {
+    try {
+      const res = await axios.get(`${API_URL}/api/items`);
+
+      const items = res.data.items ?? res.data;
+
+      const byCategory = items.reduce((acc, item) => {
+        const cat = item.category || 'Uncategorized';
+        acc[cat] = acc[cat] || [];
+        acc[cat].push(item);
+        return acc;
+      }, {});
+
+      setMenuData(byCategory);
+    } catch (err) {
+      console.error('Failed to load menu items:', err);
+    }
+  };
+
+  fetchMenu();
+}, []);
 
   // helper: find cart entry by product ID
   const getCartEntry = id => cartItems.find(ci => ci.item?._id === id);
