@@ -21,7 +21,9 @@ const __dirname = path.dirname(__filename);
 app.use(
     cors({
         origin: (origin, callback) => {
-           const allowedOrigins = [
+           
+const allowedOrigins = [
+    'https://bitebuzz-frontend.vercel.app',
     'https://bitebuzz-frontend-42rk.onrender.com',
     'https://bitebuzz-admin-7o4e.onrender.com',
     'https://bitebuzz-admin.vercel.app',
